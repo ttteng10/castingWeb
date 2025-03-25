@@ -1,0 +1,41 @@
+.HeaderWrapper {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+}
+
+.HeaderBtn {
+  flex-grow: 1;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-color: black;
+  border-style: solid;
+  border-left-width: 0.5px;
+  border-right-width: 0.5px;
+  border-top-width: 0.5px;
+  border-bottom-width: 0.5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.selected {
+  color: green;
+}
+
+.BtnWord {
+  font-size: 20px;
+  font-family: "Nanum Pen Script", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,20 @@
+.Title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+
+.TitleWord {
+  font-size: 40px;
+  font-family: "Nanum Pen Script", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+  margin: 0;
+  padding: 0;
+}

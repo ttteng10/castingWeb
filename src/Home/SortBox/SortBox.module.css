@@ -1,0 +1,61 @@
+.SortBoxWrapper {
+  width: 100%;
+  height: 30px;
+  margin: 0 0 5px 0;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.WeekBoxs {
+  width: 30%;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.WeekBox {
+  flex: 1;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.WeekSelect {
+  color: green;
+}
+
+.SearchBox {
+  width: 30%;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.SearchInput {
+  width: 80%;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  border: 0;
+}
+
+.SearchIcon {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}

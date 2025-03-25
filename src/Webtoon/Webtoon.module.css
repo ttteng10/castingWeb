@@ -1,0 +1,96 @@
+.WebtoonWrapper {
+  width: 60%;
+  max-height: 600px;
+  margin: 0 0 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.WebtoonHeader {
+  width: 100%;
+  height: 20px;
+  margin: 5px 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.BackBtnWrapper {
+  width: 50px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+.BackIcon {
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.WebtoonDescription {
+  width: 45%;
+  max-height: 600px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.WebtoonImgWrapper {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.WebtoonImg {
+  width: 100%;
+  object-fit: cover;
+}
+
+.WebtoonInforms {
+  width: 100%;
+  max-height: 200px;
+  margin: 20px 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.WebtoonInform {
+  font-size: medium;
+  margin: 5px 0;
+  padding: 0;
+}
+
+.WebtoonCharacter {
+  width: 45%;
+  height: 600px;
+  margin: 5px 0;
+  padding: 110px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
