@@ -11,7 +11,7 @@ export default function SortBox({
   setSearchCheck,
 }) {
   const weekArr = ["All", "월", "화", "수", "목", "금", "토", "일"];
-  const weekKey = ["All", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  const weekKey = ["All", "mon", "tue", "wed", "thu", "fri", "sat", "sun"];
   const handleChange = (event) => {
     setSearchWord(event.target.value);
   };
