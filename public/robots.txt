@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://casting-web.vercel.app//sitemap.xml
