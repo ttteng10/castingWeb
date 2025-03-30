@@ -10,7 +10,7 @@ export default function WebtoonAdd() {
   const [day, setDay] = useState("Mon");
   const [img, setImg] = useState("");
   const [file, setFile] = useState(null);
-  const { setHeaderState } = useContext(StateContext);
+  const { setHeaderState, WebtoonData } = useContext(StateContext);
 
   function handleWebtoon(e) {
     setWebtoon(e.target.value);
@@ -35,21 +35,39 @@ export default function WebtoonAdd() {
 
   async function addClick() {
     if (!file) {
-      console.error("No file selected");
+      alert("웹툰 이미지를 넣어주세요");
       return;
     }
 
     const imgURL = await addWebtoonImg(file); // ✅ 업로드 완료 후 URL 받기
     if (!imgURL) {
-      console.error("Image upload failed");
+      alert("웹툰 이미지를 넣어주세요");
+      return;
+    }
+
+    if (webtoon === "") {
+      alert("웹툰 제목을 넣어주세요");
+      return;
+    }
+
+    if (platform === "") {
+      alert("웹툰 플랫폼을 넣어주세요");
+      return;
+    }
+
+    const exists = WebtoonData.some((item) => item.webtoon === webtoon);
+    if (exists) {
+      alert("이미 존재하는 웹툰입니다.");
       return;
     }
 
     let existCheck = await addWebtoon(webtoon, platform, day, imgURL); // ✅ imgURL을 제대로 전달
     if (existCheck === "exist") {
       alert("이미 존재하는 웹툰입니다.");
+      return;
+    } else {
+      setHeaderState("series");
     }
-    setHeaderState("series");
   }
 
   return (
@@ -75,15 +93,15 @@ export default function WebtoonAdd() {
       </div>
       <div className={styles.WebtoonInform}>
         <div className={styles.inputWrapper}>
-          <label>제목</label>
+          <label className={styles.inputLabel}>제목</label>
           <input type="text" onChange={(e) => handleWebtoon(e)} />
         </div>
         <div className={styles.inputWrapper}>
-          <label>플랫폼</label>
+          <label className={styles.inputLabel}>플랫폼</label>
           <input type="text" onChange={(e) => handlePlatform(e)} />
         </div>
         <div className={styles.inputWrapper}>
-          <label>요일</label>
+          <label className={styles.inputLabel}>요일</label>
           <select onChange={(e) => handleDay(e)}>
             <option value="Mon">월요일</option>
             <option value="Tue">화요일</option>
