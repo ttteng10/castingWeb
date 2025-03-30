@@ -17,9 +17,9 @@ export default function VoteResult({ webtoonId }) {
     <div className={styles.VoteResultWrapper}>
       {rank.map((item, idx) => (
         <div className={styles.VoteDiv} key={item.id}>
-          <p className={styles.VoteInform}>
-            {idx + 1}. {item.actor}
-          </p>
+          <p className={styles.VoteRank}>{idx + 1}.</p>
+          <img src={item.actorImg} className={styles.VoteImg} />
+          <p className={styles.VoteInform}>{item.actor}</p>
           <p className={styles.VoteInform}>{item.vote}표</p>
         </div>
       ))}

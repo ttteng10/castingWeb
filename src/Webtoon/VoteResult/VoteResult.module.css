@@ -12,13 +12,22 @@
 
 .VoteDiv {
   width: 100%;
-  height: 30px;
+  height: 100px;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
+}
+
+.VoteRank {
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .VoteInform {
@@ -28,4 +37,11 @@
   font-size: 20px;
   justify-content: center;
   align-items: center;
+}
+
+.VoteImg {
+  height: 100px;
+  margin: 0;
+  padding: 0;
+  object-fit: contain;
 }
