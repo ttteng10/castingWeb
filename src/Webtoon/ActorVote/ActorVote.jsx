@@ -41,6 +41,9 @@ export default function ActorVote({ actors, setPageState }) {
             >
               <h4>추가</h4>
             </div>
+            <div className={styles.BackBtn} onClick={() => setVoteCheck(true)}>
+              <h4>현재 순위</h4>
+            </div>
             <div className={styles.VoteBtn} onClick={() => voteClick()}>
               <h4>투표</h4>
             </div>
@@ -70,7 +73,9 @@ export default function ActorVote({ actors, setPageState }) {
         </div>
       )}
       {showDialog && <ActorAdd setShowDialog={setShowDialog} />}
-      {voteCheck && <VoteResult webtoonId={selectWebtoon.id} />}
+      {voteCheck && (
+        <VoteResult webtoonId={selectWebtoon.id} setVoteCheck={setVoteCheck} />
+      )}
     </>
   );
 }
