@@ -1,11 +1,13 @@
 .WebtoonWrapper {
   width: 60%;
-  max-height: 600px;
+  /* max-height: 600px; */
   margin: 0 0 0 0;
   padding: 0;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  gap: 20px;
 }
 
 .WebtoonHeader {
@@ -38,19 +40,21 @@
 }
 
 .WebtoonDescription {
-  width: 45%;
-  max-height: 600px;
+  /* width: 45%; */
+  width: 100%;
+  height: 150px;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
 .WebtoonImgWrapper {
-  width: 100%;
-  height: 400px;
+  /* width: 50%; */
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,33 +66,77 @@
 }
 
 .WebtoonImg {
-  width: 100%;
-  object-fit: cover;
+  /* width: 100%; */
+  height: 150px;
+  object-fit: contain;
 }
 
 .WebtoonInforms {
   width: 100%;
-  max-height: 200px;
-  margin: 20px 0 0 0;
+  height: 150px;
+  margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* flex-direction: column; */
+  justify-content: flex-start;
   align-items: flex-start;
   gap: 5px;
 }
 
+.WebtoonInforms2 {
+  width: 30%;
+  height: 150px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.PageTip {
+  width: 70%;
+  height: 150px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.WebtoonTitle {
+  font-size: large;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+
 .WebtoonInform {
+  font-size: small;
+  margin: 5px 0;
+  padding: 0;
+}
+
+.PageTipInform {
   font-size: medium;
   margin: 5px 0;
   padding: 0;
 }
 
 .WebtoonCharacter {
-  width: 45%;
+  /* width: 45%; */
+  width: 100%;
   height: 600px;
-  margin: 5px 0;
-  padding: 110px 0 0 0;
+  /* margin: 5px 0;
+  padding: 110px 0 0 0; */
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
