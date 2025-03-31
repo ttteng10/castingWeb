@@ -6,7 +6,7 @@ import noImage from "../../assets/images/noImage.png";
 import { incrementVote } from "../../Data/supabaseClient";
 import { StateContext } from "../../Home/Home/Home";
 
-export default function ActorVote({ actors, setPageState }) {
+export default function ActorVote({ actors, setPageState, clickCharacter }) {
   const [actorData, setActorData] = useState(actors);
   const [actorVote, setActorVote] = useState(null);
   const [voteCheck, setVoteCheck] = useState(false);
@@ -28,6 +28,9 @@ export default function ActorVote({ actors, setPageState }) {
     <>
       {!voteCheck && (
         <div className={styles.Container}>
+          <div className={styles.selectCharcter}>
+            <h4>배역 : {clickCharacter}</h4>
+          </div>
           <div className={styles.VoteBtns}>
             <div
               className={styles.BackBtn}
@@ -74,7 +77,11 @@ export default function ActorVote({ actors, setPageState }) {
       )}
       {showDialog && <ActorAdd setShowDialog={setShowDialog} />}
       {voteCheck && (
-        <VoteResult webtoonId={selectWebtoon.id} setVoteCheck={setVoteCheck} />
+        <VoteResult
+          webtoonId={selectWebtoon.id}
+          setVoteCheck={setVoteCheck}
+          clickCharacter={clickCharacter}
+        />
       )}
     </>
   );

@@ -14,6 +14,7 @@ export default function CharacterVote() {
   const { selectWebtoon } = useContext(StateContext);
   const [pageState, setPageState] = useState("Character");
   const [actors, setActors] = useState([]);
+  const [clickCharacter, setClickCharacter] = useState([]);
   const [showDialog, setShowDialog] = useState(false);
   const [webtoonCharacters, setWebtoonCharacters] = useState(
     // selectWebtoon.characters
@@ -30,9 +31,10 @@ export default function CharacterVote() {
     fetchCharacters();
   }, [showDialog]);
 
-  async function characterClick(id) {
+  async function characterClick(id, name) {
     let newActors = await getActorByWebtoonId(id);
     setActors(newActors);
+    setClickCharacter(name);
     setPageState("Actor");
   }
   return (
@@ -43,7 +45,7 @@ export default function CharacterVote() {
             <div
               className={styles.CharacterDiv}
               key={item.id}
-              onClick={() => characterClick(item.webtoonId)}
+              onClick={() => characterClick(item.webtoonId, item.name)}
             >
               <img
                 className={styles.CharacterImg}
@@ -72,7 +74,11 @@ export default function CharacterVote() {
       )}
       {showDialog && <CharacterAdd setShowDialog={setShowDialog} />}
       {pageState === "Actor" && (
-        <ActorVote actors={actors} setPageState={setPageState} />
+        <ActorVote
+          actors={actors}
+          setPageState={setPageState}
+          clickCharacter={clickCharacter}
+        />
       )}
     </div>
   );

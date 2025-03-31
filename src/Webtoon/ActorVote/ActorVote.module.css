@@ -1,6 +1,6 @@
 .Container {
   width: 100%;
-  max-height: 600px;
+  /* max-height: 600px; */
   margin: 0;
   padding: 0;
   display: flex;
@@ -13,13 +13,23 @@
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   box-sizing: border-box;
+  gap: 10px;
+}
+.selectCharcter {
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .BackBtn {
-  width: 22%;
+  /* width: 18%; */
+  width: 100px;
   height: 40px;
   margin: 0;
   padding: 0;
@@ -33,7 +43,8 @@
 }
 
 .AddBtn {
-  width: 22%;
+  /* width: 18%; */
+  width: 100px;
   height: 40px;
   margin: 0;
   padding: 0;
@@ -48,7 +59,8 @@
 }
 
 .VoteBtn {
-  width: 22%;
+  /* width: 18%; */
+  width: 100px;
   height: 40px;
   margin: 0;
   padding: 0;
