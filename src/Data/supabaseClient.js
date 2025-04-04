@@ -253,3 +253,29 @@ export const incrementVote = async (actorId) => {
 
   console.log("Vote incremented successfully:", data);
 };
+
+export const getAllHelpRequests = async () => {
+  const { data, error } = await supabase.from("helpRequests").select("*");
+
+  if (error) {
+    console.error("Error fetching helpRequests: ", error);
+    return [];
+  }
+
+  return data ?? [];
+};
+
+export const addHelpRequest = async (title, detail, password) => {
+  const { data, error } = await supabase
+    .from("helpRequests")
+    .insert([
+      { title: title, detail: detail, password: password, state: "wait" },
+    ]);
+
+  if (error) {
+    console.error("Error inserting helpRequest: ", error);
+    return;
+  }
+
+  return data;
+};

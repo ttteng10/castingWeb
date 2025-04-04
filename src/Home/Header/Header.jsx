@@ -33,7 +33,7 @@ export default function Header() {
         }`}
         onClick={() => headerClick("help")}
       >
-        <h3>도움말</h3>
+        <h3>문의 사항</h3>
       </div>
     </div>
   );

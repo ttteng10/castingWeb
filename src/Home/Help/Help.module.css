@@ -26,6 +26,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 .noticeAdd {
@@ -37,6 +38,14 @@
   align-items: center;
 }
 
+.helpBtns {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
 .AddBtn {
   width: 100px;
   height: 30px;
@@ -45,6 +54,7 @@
   align-items: center;
   border: 1px solid black;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .notices {
@@ -55,4 +65,153 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 5px;
+}
+
+.noticeHeader {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.headerTitle {
+  width: 20%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid black;
+}
+.headerDetail {
+  width: 60%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid black;
+}
+.headerState {
+  width: 20%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notice {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.noticeTitle {
+  width: 20%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.noticeDetail {
+  width: 60%;
+  height: 40px;
+  margin: 0;
+  padding: 0 0 0 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.noticeState {
+  width: 20%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.noticeRequest {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.requestTitle {
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.inputTitle {
+  width: 20%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputTitle2 {
+  width: 70%;
+  height: 30px;
+  margin: 0;
+  padding: 0 0 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.requestDetail {
+  width: 100%;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.inputDetail {
+  width: 20%;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputDetail2 {
+  width: 70%;
+  height: 100px;
+  margin: 0;
+  padding: 5px 0 0 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
