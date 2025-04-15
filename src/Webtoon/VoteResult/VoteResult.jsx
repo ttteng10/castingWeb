@@ -7,12 +7,16 @@ export default function VoteResult({
   webtoonId,
   setVoteCheck,
   clickCharacter,
+  characterID,
 }) {
   const [rank, setRank] = useState([]);
 
   useEffect(() => {
     const fetchActors = async () => {
-      let newWebtoonCharacters = await getActorByWebtoonId(webtoonId);
+      let newWebtoonCharacters = await getActorByWebtoonId(
+        webtoonId,
+        characterID
+      );
       setRank(newWebtoonCharacters);
     };
     fetchActors();

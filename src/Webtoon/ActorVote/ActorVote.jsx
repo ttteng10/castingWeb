@@ -11,6 +11,7 @@ export default function ActorVote({
   setPageState,
   clickCharacter,
   clickID,
+  characterID,
 }) {
   const [actorData, setActorData] = useState(actors);
   const [actorVote, setActorVote] = useState(null);
@@ -19,7 +20,7 @@ export default function ActorVote({
   const { selectWebtoon } = useContext(StateContext);
   useEffect(() => {
     const fetchActors = async () => {
-      let newCharacterActors = await getActorByWebtoonId(clickID);
+      let newCharacterActors = await getActorByWebtoonId(clickID, characterID);
       setActorData(newCharacterActors);
     };
     fetchActors();
@@ -86,12 +87,15 @@ export default function ActorVote({
           </div>
         </div>
       )}
-      {showDialog && <ActorAdd setShowDialog={setShowDialog} />}
+      {showDialog && (
+        <ActorAdd setShowDialog={setShowDialog} characterID={characterID} />
+      )}
       {voteCheck && (
         <VoteResult
           webtoonId={selectWebtoon.id}
           setVoteCheck={setVoteCheck}
           clickCharacter={clickCharacter}
+          characterID={characterID}
         />
       )}
     </>

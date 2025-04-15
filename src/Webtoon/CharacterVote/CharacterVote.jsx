@@ -16,6 +16,7 @@ export default function CharacterVote() {
   const [actors, setActors] = useState([]);
   const [clickCharacter, setClickCharacter] = useState();
   const [clickID, setClickID] = useState();
+  const [characterID, setCharacterID] = useState();
   const [showDialog, setShowDialog] = useState(false);
   const [webtoonCharacters, setWebtoonCharacters] = useState(
     // selectWebtoon.characters
@@ -32,12 +33,13 @@ export default function CharacterVote() {
     fetchCharacters();
   }, [showDialog]);
 
-  async function characterClick(id, name) {
-    let newActors = await getActorByWebtoonId(id);
+  async function characterClick(webtoonID, name, characterID) {
+    let newActors = await getActorByWebtoonId(webtoonID, characterID);
     setActors(newActors);
     setClickCharacter(name);
     setPageState("Actor");
-    setClickID(id);
+    setClickID(webtoonID);
+    setCharacterID(characterID);
   }
   return (
     <div className={styles.VoteWrapper}>
@@ -47,7 +49,7 @@ export default function CharacterVote() {
             <div
               className={styles.CharacterDiv}
               key={item.id}
-              onClick={() => characterClick(item.webtoonId, item.name)}
+              onClick={() => characterClick(item.webtoonId, item.name, item.id)}
             >
               <img
                 className={styles.CharacterImg}
@@ -81,6 +83,7 @@ export default function CharacterVote() {
           setPageState={setPageState}
           clickCharacter={clickCharacter}
           clickID={clickID}
+          characterID={characterID}
         />
       )}
     </div>

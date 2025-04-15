@@ -8,7 +8,7 @@ import {
 } from "../../Data/supabaseClient";
 import { StateContext } from "../../Home/Home/Home";
 
-export function ActorAdd({ setShowDialog }) {
+export function ActorAdd({ setShowDialog, characterID }) {
   const [imgfile, setImgfile] = useState("");
   const [actorName, setActorName] = useState("");
   const { selectWebtoon } = useContext(StateContext);
@@ -36,7 +36,12 @@ export function ActorAdd({ setShowDialog }) {
       return;
     }
 
-    let existCheck = await addActor(selectWebtoon.id, actorName, imgURL); // ✅ imgURL을 제대로 전달
+    let existCheck = await addActor(
+      selectWebtoon.id,
+      actorName,
+      imgURL,
+      characterID
+    ); // ✅ imgURL을 제대로 전달
     if (existCheck === "exist") {
       alert("이미 존재하는 배우입니다.");
     } else {

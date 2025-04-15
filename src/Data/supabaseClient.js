@@ -147,7 +147,7 @@ export const addCharacterImg = async (file) => {
   return `${SUPABASE_URL}/storage/v1/object/public/character-images/${fileName}`;
 };
 
-export const addActor = async (id, actor, actorImg) => {
+export const addActor = async (id, actor, actorImg, characterID) => {
   // 1️⃣ 공백 제거 및 소문자 변환 (필요한 경우)
   actor = actor.trim();
 
@@ -157,6 +157,7 @@ export const addActor = async (id, actor, actorImg) => {
     .select("*")
     .eq("actor", actor)
     .eq("webtoonId", id)
+    .eq("characterID", characterID)
     .limit(1);
 
   if (checkError && checkError.code !== "PGRST116") {
@@ -170,9 +171,14 @@ export const addActor = async (id, actor, actorImg) => {
   }
 
   // 4️⃣ 중복되지 않으면 삽입
-  const { data, error } = await supabase
-    .from("actors")
-    .insert([{ webtoonId: id, actor: actor, actorImg: actorImg }]);
+  const { data, error } = await supabase.from("actors").insert([
+    {
+      webtoonId: id,
+      actor: actor,
+      actorImg: actorImg,
+      characterID: characterID,
+    },
+  ]);
 
   if (error) {
     return "error";
@@ -208,11 +214,12 @@ export const addActorImg = async (file) => {
   return `${SUPABASE_URL}/storage/v1/object/public/actor-images/${fileName}`;
 };
 
-export const getActorByWebtoonId = async (id) => {
+export const getActorByWebtoonId = async (id, characterID) => {
   const { data, error } = await supabase
     .from("actors")
     .select("*")
-    .eq("webtoonId", id);
+    .eq("webtoonId", id)
+    .eq("characterID", characterID);
 
   if (error) {
     console.error("Error fetching characters:", error);
