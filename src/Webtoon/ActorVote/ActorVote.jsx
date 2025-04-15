@@ -3,16 +3,27 @@ import styles from "./ActorVote.module.css";
 import VoteResult from "../VoteResult/VoteResult";
 import { ActorAdd } from "../ActorAdd/ActorAdd";
 import noImage from "../../assets/images/noImage.png";
-import { incrementVote } from "../../Data/supabaseClient";
+import { getActorByWebtoonId, incrementVote } from "../../Data/supabaseClient";
 import { StateContext } from "../../Home/Home/Home";
 
-export default function ActorVote({ actors, setPageState, clickCharacter }) {
+export default function ActorVote({
+  actors,
+  setPageState,
+  clickCharacter,
+  clickID,
+}) {
   const [actorData, setActorData] = useState(actors);
   const [actorVote, setActorVote] = useState(null);
   const [voteCheck, setVoteCheck] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
   const { selectWebtoon } = useContext(StateContext);
-  useEffect(() => {}, [showDialog]);
+  useEffect(() => {
+    const fetchActors = async () => {
+      let newCharacterActors = await getActorByWebtoonId(clickID);
+      setActorData(newCharacterActors);
+    };
+    fetchActors();
+  }, [showDialog]);
 
   function actorClick(actorId) {
     setActorVote(actorId);

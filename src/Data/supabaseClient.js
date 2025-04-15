@@ -156,6 +156,7 @@ export const addActor = async (id, actor, actorImg) => {
     .from("actors")
     .select("*")
     .eq("actor", actor)
+    .eq("webtoonId", id)
     .limit(1);
 
   if (checkError && checkError.code !== "PGRST116") {

@@ -14,7 +14,8 @@ export default function CharacterVote() {
   const { selectWebtoon } = useContext(StateContext);
   const [pageState, setPageState] = useState("Character");
   const [actors, setActors] = useState([]);
-  const [clickCharacter, setClickCharacter] = useState([]);
+  const [clickCharacter, setClickCharacter] = useState();
+  const [clickID, setClickID] = useState();
   const [showDialog, setShowDialog] = useState(false);
   const [webtoonCharacters, setWebtoonCharacters] = useState(
     // selectWebtoon.characters
@@ -36,6 +37,7 @@ export default function CharacterVote() {
     setActors(newActors);
     setClickCharacter(name);
     setPageState("Actor");
+    setClickID(id);
   }
   return (
     <div className={styles.VoteWrapper}>
@@ -78,6 +80,7 @@ export default function CharacterVote() {
           actors={actors}
           setPageState={setPageState}
           clickCharacter={clickCharacter}
+          clickID={clickID}
         />
       )}
     </div>
