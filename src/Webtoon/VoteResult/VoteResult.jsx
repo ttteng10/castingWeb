@@ -17,10 +17,14 @@ export default function VoteResult({
         webtoonId,
         characterID
       );
-      setRank(newWebtoonCharacters);
+      // setRank(newWebtoonCharacters);
+      const sortedCharacters = newWebtoonCharacters.sort(
+        (a, b) => b.vote - a.vote
+      );
+      setRank(sortedCharacters);
     };
     fetchActors();
-    rank.sort((a, b) => b.vote - a.vote);
+    // rank.sort((a, b) => b.vote - a.vote);
   }, []);
   return (
     <div className={styles.VoteResultWrapper}>
