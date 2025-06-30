@@ -1,0 +1,96 @@
+.AddModalWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.AddModalHeader {
+  width: 100%;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.AddWrapper {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 0.5px solid black;
+}
+
+.InputLabel {
+  width: 25%;
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #dcdcdc;
+}
+
+.TagCss {
+  font-size: small;
+  font-weight: bold;
+}
+
+.InputTag {
+  width: 70%;
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.inputText {
+  width: 80%;
+  height: 40%;
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+
+.ImgAddBtn {
+  width: 100px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.AddButtons {
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}

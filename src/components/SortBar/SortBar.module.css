@@ -1,0 +1,32 @@
+.SortBarWrapper {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+.SearchBarWrapper {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  gap: 20px;
+}
+
+.SearchBarWrapper input {
+  width: 500px;
+  padding: 0 0 0 10px;
+  border: 1px solid #8c8c8c;
+  border-radius: 10px;
+  font-size: large;
+}
+
+.SortBox {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+}

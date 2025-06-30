@@ -1,0 +1,132 @@
+.VoteWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+.WebtoonInform {
+  display: flex;
+  width: 800px;
+  margin: 20px auto;
+  padding: 0;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.WebtoonInformImg {
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  padding: 0;
+  object-fit: contain;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.DetailInform {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.DetailTitle {
+  font-size: large;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.DetailWord {
+  font-size: small;
+  margin: 0;
+  padding: 0;
+}
+
+.Buttons {
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.VoteBtn {
+  width: 100px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.VoteContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  gap: 20px;
+}
+
+.ActorDiv {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.ActorImg {
+  width: 100%;
+  height: 120px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+.ActorSelected {
+  border-color: red;
+  border-width: 2px;
+}
+
+.ActorInform {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 0 5px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.ActorTitle {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: 15px;
+}
