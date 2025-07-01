@@ -96,6 +96,7 @@ export const addCharacter = async (id, name, img) => {
   const { data: existingCharacter, error: checkError } = await supabase
     .from("characters")
     .select("*")
+    .eq("webtoonId", id)
     .eq("name", name)
     .limit(1);
 
