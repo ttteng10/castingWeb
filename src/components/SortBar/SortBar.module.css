@@ -30,3 +30,40 @@
   padding: 0;
   height: 50px;
 }
+
+@media screen and (max-width: 1024px) {
+  .SortBarWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .SearchBarWrapper {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    gap: 20px;
+  }
+
+  .SearchBarWrapper input {
+    width: 90vw;
+    padding: 0 0 0 10px;
+    border: 1px solid #8c8c8c;
+    border-radius: 10px;
+    font-size: large;
+  }
+
+  .SortBox {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    width: 90vw;
+    height: 50px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
