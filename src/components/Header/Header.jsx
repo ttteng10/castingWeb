@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 
 const Menulist = [
@@ -8,9 +8,14 @@ const Menulist = [
 ];
 
 export default function Header() {
+  const naivgate = useNavigate();
+
+  function handleHome() {
+    naivgate("/");
+  }
   return (
     <div className={styles.HeaderWrapper}>
-      <div className={styles.TitleWrapper}>
+      <div className={styles.TitleWrapper} onClick={handleHome}>
         <p className={styles.HeaderTitle}>내맘대로 캐스팅</p>
       </div>
       <div className={styles.Menus}>
