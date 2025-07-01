@@ -49,7 +49,8 @@ export function AddModal({ setModalVisible, webtoonId }) {
       return;
     } else {
       setModalVisible(false);
-      navigate(0);
+      // navigate(0);
+      navigate(`/webtoonDetail/${webtoonId}`);
     }
   }
 
@@ -140,7 +141,7 @@ export function AddActor({ setModalVisible, webtoonId, characterId }) {
       return;
     } else {
       setModalVisible(false);
-      navigate(0);
+      navigate(`/webtoonDetail/${webtoonId}/${characterId}`);
     }
   }
 
