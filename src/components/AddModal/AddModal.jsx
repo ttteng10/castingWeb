@@ -141,7 +141,7 @@ export function AddActor({ setModalVisible, webtoonId, characterId }) {
       return;
     } else {
       setModalVisible(false);
-      navigate(`/webtoonDetail/${webtoonId}/${characterId}`);
+      navigate(`/webtoonVote/${webtoonId}/${characterId}`);
     }
   }
 
