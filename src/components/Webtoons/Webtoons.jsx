@@ -97,5 +97,6 @@ async function loadWebtoons() {
       { status: 500 }
     );
   }
+  webtoons.sort((a, b) => b.id - a.id);
   return webtoons;
 }
