@@ -233,12 +233,19 @@
     border-radius: 5px;
   }
 
+  .VoteContentWrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
   .VoteContent {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* max-width: 1200px; */
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     padding: 0;
     gap: 20px;
   }
