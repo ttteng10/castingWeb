@@ -11,6 +11,16 @@ export default function RootLayout() {
   useEffect(() => {
     localStorage.setItem("explain", explain);
   }, [explain]);
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      localStorage.setItem("explain", "true");
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, []);
 
   return (
     <>
