@@ -105,7 +105,7 @@
 
   .titleWrapper {
     width: 100%;
-    height: 80px;
+    /* height: 80px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -125,7 +125,7 @@
 
   .imageSlider {
     width: 100%;
-    /* height: 500px; */
+    height: 400px;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -142,7 +142,8 @@
 
   .sliderImg {
     width: 100%;
-    height: 400px;
+    /* height: 400px; */
+    height: 250px;
     object-fit: contain;
     margin: 0;
     padding: 0;
@@ -155,7 +156,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: large;
+    font-size: medium;
     font-weight: bold;
   }
 
