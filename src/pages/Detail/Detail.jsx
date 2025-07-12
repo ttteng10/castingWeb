@@ -59,24 +59,28 @@ export default function Detail() {
                 </div>
               </div>
             </div>
-            <div className={styles.DetailContent}>
-              {characterData.map((item) => (
-                <div
-                  key={item.id}
-                  className={styles.CharacterDiv}
-                  onClick={() => handleVotepage(item.webtoonId, item.id, item)}
-                >
-                  <img src={item.img} className={styles.CharacterImg} />
-                  <div className={styles.CharacterInform}>
-                    <p className={styles.CharacterTitle}>
-                      이름 :{" "}
-                      {item.name.length < 10
-                        ? item.name
-                        : item.name.slice(0, 10) + "..."}
-                    </p>
+            <div className={styles.DetailContentWrapper}>
+              <div className={styles.DetailContent}>
+                {characterData.map((item) => (
+                  <div
+                    key={item.id}
+                    className={styles.CharacterDiv}
+                    onClick={() =>
+                      handleVotepage(item.webtoonId, item.id, item)
+                    }
+                  >
+                    <img src={item.img} className={styles.CharacterImg} />
+                    <div className={styles.CharacterInform}>
+                      <p className={styles.CharacterTitle}>
+                        이름 :{" "}
+                        {item.name.length < 10
+                          ? item.name
+                          : item.name.slice(0, 10) + "..."}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
             {modalVisible && (
               <AddModal

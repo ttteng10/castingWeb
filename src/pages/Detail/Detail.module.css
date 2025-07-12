@@ -75,13 +75,26 @@
   border-radius: 5px;
 }
 
+.DetailContentWrapper {
+  width: 1200px;
+  margin: 0;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  border: 0.5px solid black;
+  border-radius: 5px;
+}
+
 .DetailContent {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
+  /* max-width: 1200px; */
+  width: 100%;
+  /* margin: 0 auto; */
+  margin: 0;
+  /* padding: 0; */
+  padding: 0 0 0 60px;
   gap: 20px;
 }
 
