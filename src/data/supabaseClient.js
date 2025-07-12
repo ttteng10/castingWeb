@@ -220,7 +220,8 @@ export const getActorByWebtoonId = async (id, characterID) => {
     .from("actors")
     .select("*")
     .eq("webtoonId", id)
-    .eq("characterID", characterID);
+    .eq("characterID", characterID)
+    .order("id", { ascending: true });
 
   if (error) {
     console.error("Error fetching characters:", error);
