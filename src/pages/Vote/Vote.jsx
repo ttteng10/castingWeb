@@ -68,30 +68,32 @@ export default function Vote() {
                 </div>
               </div>
             </div>
-            <div className={styles.VoteContent}>
-              {actorsData.map((item) => (
-                <div
-                  key={item.id}
-                  className={styles.ActorDiv}
-                  onClick={() => clickActor(item.id)}
-                >
-                  <img
-                    src={item.actorImg}
-                    className={`${styles.ActorImg} ${
-                      voteId === item.id ? styles.ActorSelected : ""
-                    }`}
-                  />
-                  <div className={styles.ActorInform}>
-                    <p className={styles.ActorTitle}>
-                      이름 :
-                      {item.actor.length < 10
-                        ? item.actor
-                        : item.actor.slice(0, 10) + "..."}
-                    </p>
-                    <p className={styles.ActorTitle}>추천 : {item.vote}</p>
+            <div className={styles.VoteContentWrapper}>
+              <div className={styles.VoteContent}>
+                {actorsData.map((item) => (
+                  <div
+                    key={item.id}
+                    className={styles.ActorDiv}
+                    onClick={() => clickActor(item.id)}
+                  >
+                    <img
+                      src={item.actorImg}
+                      className={`${styles.ActorImg} ${
+                        voteId === item.id ? styles.ActorSelected : ""
+                      }`}
+                    />
+                    <div className={styles.ActorInform}>
+                      <p className={styles.ActorTitle}>
+                        이름 :
+                        {item.actor.length < 10
+                          ? item.actor
+                          : item.actor.slice(0, 10) + "..."}
+                      </p>
+                      <p className={styles.ActorTitle}>추천 : {item.vote}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
             {modalVisible && (
               <AddActor
