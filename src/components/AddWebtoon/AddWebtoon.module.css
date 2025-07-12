@@ -50,10 +50,22 @@
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 0.5px solid black;
   object-fit: contain;
+  gap: 2px;
+}
+
+.InputImgText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
 }
 
 .AddBtnWrapper {
@@ -180,10 +192,22 @@
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 0.5px solid black;
     object-fit: contain;
+    gap: 2px;
+  }
+
+  .InputImgText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
   }
 
   .AddBtnWrapper {

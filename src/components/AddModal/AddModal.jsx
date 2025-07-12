@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import styles from "./AddModal.module.css";
 import {
   addActor,
@@ -57,12 +57,35 @@ export function AddModal({ setModalVisible, webtoonId }) {
   function handleCancel() {
     setModalVisible(false);
   }
+  useEffect(() => {
+    function handlePaste(e) {
+      const items = e.clipboardData.items;
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        if (item.type.indexOf("image") !== -1) {
+          const file = item.getAsFile();
+          if (file) {
+            setImgFile(file);
+          }
+        }
+      }
+    }
+
+    window.addEventListener("paste", handlePaste);
+
+    return () => {
+      window.removeEventListener("paste", handlePaste);
+    };
+  }, []);
   return (
     <>
       <div className={styles.AddModalWrapper}>
         <div className={styles.InputImgWrapper} onClick={handleDivClick}>
           {imgfile === null ? (
-            <div className={styles.InputImg}>이미지 추가</div>
+            <div className={styles.InputImg}>
+              <p className={styles.InputImgText}>이미지 추가</p>
+              <p className={styles.InputImgText}>(복사 붙이기 가능)</p>
+            </div>
           ) : (
             <img
               src={URL.createObjectURL(imgfile)}
@@ -148,12 +171,35 @@ export function AddActor({ setModalVisible, webtoonId, characterId }) {
   function handleCancel() {
     setModalVisible(false);
   }
+  useEffect(() => {
+    function handlePaste(e) {
+      const items = e.clipboardData.items;
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        if (item.type.indexOf("image") !== -1) {
+          const file = item.getAsFile();
+          if (file) {
+            setImgFile(file);
+          }
+        }
+      }
+    }
+
+    window.addEventListener("paste", handlePaste);
+
+    return () => {
+      window.removeEventListener("paste", handlePaste);
+    };
+  }, []);
   return (
     <>
       <div className={styles.AddModalWrapper}>
         <div className={styles.InputImgWrapper} onClick={handleDivClick}>
           {imgfile === null ? (
-            <div className={styles.InputImg}>이미지 추가</div>
+            <div className={styles.InputImg}>
+              <p className={styles.InputImgText}>이미지 추가</p>
+              <p className={styles.InputImgText}>(복사 붙이기 가능)</p>
+            </div>
           ) : (
             <img
               src={URL.createObjectURL(imgfile)}

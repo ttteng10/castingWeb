@@ -153,7 +153,10 @@ export default function AddWebtoon() {
           </div>
           <div className={styles.InputTag}>
             {imgfile === null && (
-              <div className={styles.InputImg}>이미지 추가</div>
+              <div className={styles.InputImg}>
+                <p className={styles.InputImgText}>이미지 추가</p>
+                <p className={styles.InputImgText}>(복사 붙이기 가능)</p>
+              </div>
             )}
             {imgfile && (
               <img

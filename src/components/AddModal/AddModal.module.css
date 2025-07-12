@@ -30,6 +30,7 @@
 
 .InputImg {
   display: flex;
+  flex-direction: column;
   width: 100px;
   height: 150px;
   margin: 0;
@@ -39,6 +40,16 @@
   object-fit: contain;
   border: 0.5px solid black;
   border-radius: 5px;
+  gap: 2px;
+}
+.InputImgText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
 }
 
 .InputNameWrapper {
