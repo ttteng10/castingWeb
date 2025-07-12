@@ -19,7 +19,7 @@ export default function Vote() {
   const characterData = useSelector((state) => state.character.characterData);
   const webtoonName = useSelector((state) => state.character.webtoonName);
 
-  const [voteId, setVoteId] = useState();
+  const [voteId, setVoteId] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
 
   function clickActor(actorId) {
@@ -31,6 +31,8 @@ export default function Vote() {
       await incrementVote(voteId);
       setVoteId(null);
       navigate(`/webtoonResult/${webtoonData.id}/${characterData.id}`);
+    } else {
+      alert("투표할 배우를 선택해주세요");
     }
   }
 

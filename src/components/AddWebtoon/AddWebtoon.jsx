@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Select from "react-select";
 import styles from "./AddWebtoon.module.css";
 import { useNavigate } from "react-router-dom";
@@ -77,6 +77,27 @@ export default function AddWebtoon() {
   function handleCancel() {
     navigate("/");
   }
+  useEffect(() => {
+    function handlePaste(e) {
+      const items = e.clipboardData.items;
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        if (item.type.indexOf("image") !== -1) {
+          const file = item.getAsFile();
+          if (file) {
+            setImgFile(file);
+          }
+        }
+      }
+    }
+
+    window.addEventListener("paste", handlePaste);
+
+    return () => {
+      window.removeEventListener("paste", handlePaste);
+    };
+  }, []);
+
   return (
     <>
       <div className={styles.AddModalWrapper}>
@@ -119,12 +140,36 @@ export default function AddWebtoon() {
           />
         </InputBlock>
 
-        <InputBlock label="사진">
+        {/* <InputBlock label="사진">
           <div className={styles.ImgAddBtn} onClick={handleDivClick}>
             추가하기
           </div>
           {imgfile && <div>{URL.createObjectURL(imgfile)}</div>}
-        </InputBlock>
+        </InputBlock> */}
+
+        <div className={styles.AddImgWrapper}>
+          <div className={styles.InputLabel}>
+            <p className={styles.TagCss}>사진</p>
+          </div>
+          <div className={styles.InputTag}>
+            {imgfile === null && (
+              <div className={styles.InputImg}>이미지 추가</div>
+            )}
+            {imgfile && (
+              <img
+                src={URL.createObjectURL(imgfile)}
+                alt="미리보기"
+                className={styles.InputImg}
+              />
+            )}
+            <div className={styles.AddBtnWrapper}>
+              <div className={styles.ImgAddBtn} onClick={handleDivClick}>
+                추가하기
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className={styles.AddButtons}>
           <div className={styles.ImgAddBtn} onClick={handleAdd}>
             웹툰추가
