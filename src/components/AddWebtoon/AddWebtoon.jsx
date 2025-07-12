@@ -27,6 +27,7 @@ export default function AddWebtoon() {
   const [platform, setPlatform] = useState(platforms[0].value);
   const [day, setDay] = useState(days[0].value);
   const [imgfile, setImgFile] = useState(null);
+  const [width, setWidth] = useState(window.innerWidth);
 
   const textInputRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -153,9 +154,14 @@ export default function AddWebtoon() {
           </div>
           <div className={styles.InputTag}>
             {imgfile === null && (
-              <div className={styles.InputImg}>
+              <div
+                className={styles.InputImg}
+                onClick={width < 1024 && (() => handleDivClick())}
+              >
                 <p className={styles.InputImgText}>이미지 추가</p>
-                <p className={styles.InputImgText}>(복사 붙이기 가능)</p>
+                {width > 1024 && (
+                  <p className={styles.InputImgText}>(복사 붙이기 가능)</p>
+                )}
               </div>
             )}
             {imgfile && (

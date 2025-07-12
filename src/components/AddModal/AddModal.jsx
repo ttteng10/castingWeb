@@ -12,6 +12,7 @@ export function AddModal({ setModalVisible, webtoonId }) {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [imgfile, setImgFile] = useState(null);
+  const [width, setWidth] = useState(window.innerWidth);
   const fileInputRef = useRef(null);
   const nameInputRef = useRef(null);
 
@@ -84,7 +85,9 @@ export function AddModal({ setModalVisible, webtoonId }) {
           {imgfile === null ? (
             <div className={styles.InputImg}>
               <p className={styles.InputImgText}>이미지 추가</p>
-              <p className={styles.InputImgText}>(복사 붙이기 가능)</p>
+              {width > 1024 && (
+                <p className={styles.InputImgText}>(복사 붙이기 가능)</p>
+              )}
             </div>
           ) : (
             <img
@@ -127,6 +130,7 @@ export function AddActor({ setModalVisible, webtoonId, characterId }) {
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [imgfile, setImgFile] = useState(null);
+  const [width, setWidth] = useState(window.innerWidth);
   const fileInputRef = useRef(null);
   const nameInputRef = useRef(null);
 
@@ -198,7 +202,9 @@ export function AddActor({ setModalVisible, webtoonId, characterId }) {
           {imgfile === null ? (
             <div className={styles.InputImg}>
               <p className={styles.InputImgText}>이미지 추가</p>
-              <p className={styles.InputImgText}>(복사 붙이기 가능)</p>
+              {width > 1024 && (
+                <p className={styles.InputImgText}>(복사 붙이기 가능)</p>
+              )}
             </div>
           ) : (
             <img
