@@ -9,6 +9,7 @@ import { loader as resultLoader } from "./pages/Result/Result";
 import Detail from "./pages/Detail/Detail";
 import Vote from "./pages/Vote/Vote";
 import Result from "./pages/Result/Result";
+import Start from "./pages/Start/Start";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
         path: "webtoonResult/:webtoonId/:characterId",
         element: <Result />,
         loader: resultLoader,
+      },
+      {
+        path: "start",
+        element: <Start />,
       },
     ],
   },
